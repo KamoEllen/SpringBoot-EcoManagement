@@ -15,7 +15,6 @@ public class DisposalGuideline {
     @JoinColumn(name = "waste_category_id", nullable = false)
     private WasteCategory wasteCategory;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
