@@ -2,7 +2,11 @@ package com.enviro.assessment.grad001.kamogeloellenkganakga.controllers;
 
 import com.enviro.assessment.grad001.kamogeloellenkganakga.entities.WasteCategory;
 import com.enviro.assessment.grad001.kamogeloellenkganakga.services.WasteCategoryService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,14 +40,17 @@ public class WasteCategoryController {
         return ResponseEntity.ok(wasteCategory);
     }
 
-    @PostMapping
-    public WasteCategory createWasteCategory(@RequestBody WasteCategory wasteCategory) {
-        return wasteCategoryService.createWasteCategory(wasteCategory);
-    }
 
+    @PostMapping
+    public ResponseEntity<WasteCategory> createWasteCategory(@Valid @RequestBody WasteCategory wasteCategory) {
+        WasteCategory createdWasteCategory = wasteCategoryService.createWasteCategory(wasteCategory);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdWasteCategory);
+    }
+    
     @PutMapping("/{id}")
-    public WasteCategory updateWasteCategory(@PathVariable Long id, @RequestBody WasteCategory wasteCategory) {
-        return wasteCategoryService.updateWasteCategory(id, wasteCategory);
+    public ResponseEntity<WasteCategory> updateWasteCategory(@PathVariable Long id, @Valid @RequestBody WasteCategory wasteCategory) {
+        WasteCategory updatedWasteCategory = wasteCategoryService.updateWasteCategory(id, wasteCategory);
+        return ResponseEntity.ok(updatedWasteCategory);
     }
 
     @DeleteMapping("/{id}")

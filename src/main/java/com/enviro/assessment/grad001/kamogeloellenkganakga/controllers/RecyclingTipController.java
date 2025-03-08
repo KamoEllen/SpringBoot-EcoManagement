@@ -2,7 +2,11 @@ package com.enviro.assessment.grad001.kamogeloellenkganakga.controllers;
 
 import com.enviro.assessment.grad001.kamogeloellenkganakga.entities.RecyclingTip;
 import com.enviro.assessment.grad001.kamogeloellenkganakga.services.RecyclingTipService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,18 +31,21 @@ public class RecyclingTipController {
     }
 
     @PostMapping
-    public RecyclingTip createRecyclingTip(@RequestBody RecyclingTip recyclingTip) {
-        return recyclingTipService.createRecyclingTip(recyclingTip);
-    }
+public ResponseEntity<RecyclingTip> createRecyclingTip(@Valid @RequestBody RecyclingTip recyclingTip) {
+    RecyclingTip createdRecyclingTip = recyclingTipService.createRecyclingTip(recyclingTip);
+    return ResponseEntity.status(HttpStatus.CREATED).body(createdRecyclingTip);
+}
 
-    @PutMapping("/{id}")
-    public RecyclingTip updateRecyclingTip(@PathVariable Long id, @RequestBody RecyclingTip recyclingTip) {
-        return recyclingTipService.updateRecyclingTip(id, recyclingTip);
-    }
+@PutMapping("/{id}")
+public ResponseEntity<RecyclingTip> updateRecyclingTip(@PathVariable Long id, @Valid @RequestBody RecyclingTip recyclingTip) {
+    RecyclingTip updatedRecyclingTip = recyclingTipService.updateRecyclingTip(id, recyclingTip);
+    return ResponseEntity.ok(updatedRecyclingTip);
+}
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRecyclingTip(@PathVariable Long id) {
         recyclingTipService.deleteRecyclingTip(id);
         return ResponseEntity.noContent().build();
     }
+
 }

@@ -1,6 +1,8 @@
 package com.enviro.assessment.grad001.kamogeloellenkganakga.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class RecyclingTip {
@@ -9,10 +11,14 @@ public class RecyclingTip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Title is required")
+    @Size(max = 100, message = "Title must be less than 100 characters")
     private String title;
+
+    @NotBlank(message = "Description is required")
+    @Size(max = 500, message = "Description must be less than 500 characters")
     private String description;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

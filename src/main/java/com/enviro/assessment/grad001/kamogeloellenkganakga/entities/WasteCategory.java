@@ -1,19 +1,24 @@
 package com.enviro.assessment.grad001.kamogeloellenkganakga.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
-//table
 public class WasteCategory {
 
     @Id
-    //unique identifier of obj stored in db
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Name is required")
+    @Size(max = 100, message = "Name must be less than 100 characters")
     private String name;
+
+    @Size(max = 500, message = "Description must be less than 500 characters")
     private String description;
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -38,4 +43,3 @@ public class WasteCategory {
         this.description = description;
     }
 }
-
