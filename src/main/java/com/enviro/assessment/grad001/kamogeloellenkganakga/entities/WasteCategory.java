@@ -38,3 +38,4 @@ public class WasteCategory {
         this.description = description;
     }
 }
+
