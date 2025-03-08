@@ -1,6 +1,8 @@
 package com.enviro.assessment.grad001.kamogeloellenkganakga.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class DisposalGuideline {
@@ -9,12 +11,14 @@ public class DisposalGuideline {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Description is required")
+    @Size(max = 1000, message = "Description must be less than 1000 characters")
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "waste_category_id", nullable = false)
     private WasteCategory wasteCategory;
-
+    
     public Long getId() {
         return id;
     }

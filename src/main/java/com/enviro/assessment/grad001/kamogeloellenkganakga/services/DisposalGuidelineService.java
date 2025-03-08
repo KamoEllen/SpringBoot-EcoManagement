@@ -1,6 +1,7 @@
 package com.enviro.assessment.grad001.kamogeloellenkganakga.services;
 
 import com.enviro.assessment.grad001.kamogeloellenkganakga.entities.DisposalGuideline;
+import com.enviro.assessment.grad001.kamogeloellenkganakga.exceptions.ResourceNotFoundException;
 import com.enviro.assessment.grad001.kamogeloellenkganakga.repositories.DisposalGuidelineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,14 @@ public class DisposalGuidelineService {
         return disposalGuidelineRepository.findAll();
     }
 
+    // public DisposalGuideline getDisposalGuidelineById(Long id) {
+    //     return disposalGuidelineRepository.findById(id)
+    //             .orElseThrow(() -> new RuntimeException("Disposal Guideline not found"));
+    // }
     public DisposalGuideline getDisposalGuidelineById(Long id) {
-        return disposalGuidelineRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Disposal Guideline not found"));
-    }
+    return disposalGuidelineRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Disposal Guideline not found with id: " + id));
+}
 
     public List<DisposalGuideline> getGuidelinesByWasteCategory(Long wasteCategoryId) {
         return disposalGuidelineRepository.findByWasteCategoryId(wasteCategoryId);

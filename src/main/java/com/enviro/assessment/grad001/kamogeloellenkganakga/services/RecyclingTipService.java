@@ -1,6 +1,7 @@
 package com.enviro.assessment.grad001.kamogeloellenkganakga.services;
 
 import com.enviro.assessment.grad001.kamogeloellenkganakga.entities.RecyclingTip;
+import com.enviro.assessment.grad001.kamogeloellenkganakga.exceptions.ResourceNotFoundException;
 import com.enviro.assessment.grad001.kamogeloellenkganakga.repositories.RecyclingTipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +17,10 @@ public class RecyclingTipService {
     public List<RecyclingTip> getAllRecyclingTips() {
         return recyclingTipRepository.findAll();
     }
-
     public RecyclingTip getRecyclingTipById(Long id) {
-        return recyclingTipRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Recycling Tip not found"));
-    }
+    return recyclingTipRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Recycling Tip not found with id: " + id));
+}
 
     public RecyclingTip createRecyclingTip(RecyclingTip recyclingTip) {
         return recyclingTipRepository.save(recyclingTip);

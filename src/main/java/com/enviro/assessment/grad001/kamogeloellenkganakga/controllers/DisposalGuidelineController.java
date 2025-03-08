@@ -2,7 +2,11 @@ package com.enviro.assessment.grad001.kamogeloellenkganakga.controllers;
 
 import com.enviro.assessment.grad001.kamogeloellenkganakga.entities.DisposalGuideline;
 import com.enviro.assessment.grad001.kamogeloellenkganakga.services.DisposalGuidelineService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,13 +40,15 @@ public class DisposalGuidelineController {
     }
 
     @PostMapping
-    public DisposalGuideline createDisposalGuideline(@RequestBody DisposalGuideline guideline) {
-        return disposalGuidelineService.createDisposalGuideline(guideline);
+    public ResponseEntity<DisposalGuideline> createDisposalGuideline(@Valid @RequestBody DisposalGuideline guideline) {
+        DisposalGuideline createdGuideline = disposalGuidelineService.createDisposalGuideline(guideline);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdGuideline);
     }
 
     @PutMapping("/{id}")
-    public DisposalGuideline updateDisposalGuideline(@PathVariable Long id, @RequestBody DisposalGuideline guideline) {
-        return disposalGuidelineService.updateDisposalGuideline(id, guideline);
+    public ResponseEntity<DisposalGuideline> updateDisposalGuideline(@PathVariable Long id, @Valid @RequestBody DisposalGuideline guideline) {
+        DisposalGuideline updatedGuideline = disposalGuidelineService.updateDisposalGuideline(id, guideline);
+        return ResponseEntity.ok(updatedGuideline);
     }
 
     @DeleteMapping("/{id}")
@@ -50,4 +56,5 @@ public class DisposalGuidelineController {
         disposalGuidelineService.deleteDisposalGuideline(id);
         return ResponseEntity.noContent().build();
     }
+    
 }
