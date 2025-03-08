@@ -20,7 +20,15 @@ This project was developed as part of the Enviro365 Graduate Software Developer 
 - **WasteCategory**: Has a one-to-many relationship with DisposalGuideline and RecyclingTip
 - **DisposalGuideline**: Has a many-to-one relationship with WasteCategory
 - **RecyclingTip**: Has a many-to-one relationship with WasteCategory
+<!-- betterrr :) -->
+## Request Flow Diagram
+- Client sends an HTTP request.
+- Controller receives the request and calls the appropriate service.
+- Service contains the business logic and interacts with the repository.
+- Repository performs CRUD operations on the database.
+- The response flows back through the service and controller to the client.
 
+<!--
 ## Request Flow Diagram
 
 ```
@@ -58,7 +66,7 @@ This project was developed as part of the Enviro365 Graduate Software Developer 
    ▼
 🌐 Frontend Application (User Device)
 ```
-
+-->
 
 ## Technology Stack
 - **Backend**: Spring Boot, Spring Data JPA
