@@ -14,10 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/disposal-guidelines")
-   // id, guideline, and wasteType.
-    //each waste category (e.g., plastic, glass, organic) will have specific disposal instructions.
-    //disposal gide is focus becuase we can retrieve disposal guidelines based on the selected waste category
-    //@ManyToOne relationship to WasteCategory
+
 public class DisposalGuidelineController {
 
     @Autowired
