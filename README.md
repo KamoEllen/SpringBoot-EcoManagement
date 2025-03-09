@@ -13,7 +13,7 @@ API Base URL: https://springboot-ecomanagement.onrender.com/api
 -->
 Swagger UI: https://springboot-ecomanagement.onrender.com/swagger-ui.html
 
-H2 Console: https://springboot-ecomanagement.onrender.com/h2-console (Note: H2 console may not be accessible in the production environment due to security restrictions)
+H2 Console: https://springboot-ecomanagement.onrender.com/h2-console 
 
 ## Architecture
 
