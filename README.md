@@ -15,6 +15,13 @@ Swagger UI: https://springboot-ecomanagement.onrender.com/swagger-ui.html
 
 H2 Console: https://springboot-ecomanagement.onrender.com/h2-console 
 
+# Login Details (leave password blank)
+
+-JDBC URL: jdbc:h2:mem:testdb
+-User Name: sa
+-Password: 
+
+
 ## Architecture
 
 ### Core Components
