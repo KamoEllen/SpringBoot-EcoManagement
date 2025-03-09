@@ -1,4 +1,5 @@
 <!--Post-Get-Put-Delete-->
+<!--works well, make it  generate auto so users dont have to add it-->
 # SpringBoot-EcoManagement
 
 ## Overview
