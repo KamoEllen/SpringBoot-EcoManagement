@@ -6,7 +6,7 @@
 SpringBoot-EcoManagement is a sustainable waste management application built with Spring Boot. 
 
 ## Assessment Background
-This project was developed as part of the Enviro365 Graduate Software Developer Assessment.
+This project was developed as part of the Enviro365 Graduate Software Developer Assessment.( 7-day timeframe)
 
 The application is deployed on Render:
 <!--
