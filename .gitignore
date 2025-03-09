@@ -12,11 +12,6 @@ logs/
 *.log
 *.tmp
 
-# Ignore environment-specific files
-.env
-*.properties
-*.yml
-
 # Ignore notes folder (if it contains temporary or personal notes)
 notes/
 
