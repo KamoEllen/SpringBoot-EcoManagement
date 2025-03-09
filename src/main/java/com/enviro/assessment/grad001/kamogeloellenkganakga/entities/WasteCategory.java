@@ -18,7 +18,6 @@ public class WasteCategory {
     @Size(max = 500, message = "Description must be less than 500 characters")
     private String description;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

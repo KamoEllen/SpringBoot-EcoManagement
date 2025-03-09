@@ -18,10 +18,6 @@ public class DisposalGuidelineService {
         return disposalGuidelineRepository.findAll();
     }
 
-    // public DisposalGuideline getDisposalGuidelineById(Long id) {
-    //     return disposalGuidelineRepository.findById(id)
-    //             .orElseThrow(() -> new RuntimeException("Disposal Guideline not found"));
-    // }
     public DisposalGuideline getDisposalGuidelineById(Long id) {
     return disposalGuidelineRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Disposal Guideline not found with id: " + id));
