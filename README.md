@@ -6,6 +6,14 @@ SpringBoot-EcoManagement is a sustainable waste management application built wit
 ## Assessment Background
 This project was developed as part of the Enviro365 Graduate Software Developer Assessment.
 
+The application is deployed on Render:
+<!--
+API Base URL: https://springboot-ecomanagement.onrender.com/api
+-->
+Swagger UI: https://springboot-ecomanagement.onrender.com/swagger-ui.html
+
+H2 Console: https://springboot-ecomanagement.onrender.com/h2-console (Note: H2 console may not be accessible in the production environment due to security restrictions)
+
 ## Architecture
 
 ### Core Components
