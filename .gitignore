@@ -1,0 +1,47 @@
+# Ignore Maven build files
+target/
+*.jar
+*.war
+*.ear
+
+# Ignore Maven wrapper files (optional, if you want to keep them)
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore logs and temp files
+logs/
+*.log
+*.tmp
+
+# Ignore notes folder (if it contains temporary or personal notes)
+notes/
+
+# Ignore Git attributes file (optional, if you don't need it)
+.gitattributes
+
+### IDE-Specific Files ###
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# VS Code
+.vscode/
