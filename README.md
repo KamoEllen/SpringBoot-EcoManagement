@@ -98,6 +98,12 @@ The **SpringBoot EcoManagement API** is a backend service for managing waste cat
 
 ## Architecture
 
+### High-Level Visual
+
+![SpringBoot EcoManagement Diagram](https://github.com/KamoEllen/SpringBoot-EcoManagement/blob/main/diagram.png)
+
+
+
 ### Layered Architecture
 
 The application uses a **layered architecture** with clear separation of concerns:
